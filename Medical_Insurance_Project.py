@@ -3,46 +3,44 @@
 # Project: Medical Insurance Project
 # Company: Code Academy 
 # Date: 03/08/2022
+# Version: v1.2
 # Description: Basic Python project to highlight utilization of
 # Python Syntax by creating formula that estimates a person's yearly
-# insurance cost based on certain variables/criteria.
+# insurance cost based on certain variables/criteria. Improved upon 
+# v1.0 as a function to calculate insurance cost was added.
 #####################################################################
-# create the initial variables to calculate medical insurance cost
+
+# Create calculate_insurance_cost() function below: 
+def calculate_insurance_cost(age, sex, bmi, num_of_children, smoker, name):
+  estimated_cost = 250*age - 128*sex + 370*bmi + 425*num_of_children + 24000*smoker - 12500
+  print("The estimated insurance cost for " + name + " is " + str(estimated_cost) + " dollars.")
+  return estimated_cost
+
+# Initial variables for Maria 
 age = 28
-sex = 0
+sex = 0  
 bmi = 26.2
 num_of_children = 3
-smoker = 0
+smoker = 0  
+name = "Maria"
+# Estimate Maria's insurance cost
+maria_insurance_cost = calculate_insurance_cost(age, sex, bmi, num_of_children, smoker, name)
 
-# Add insurance estimate formula below
-insurance_cost = ((250 * age) - (128 * sex) + (370 * bmi) + (425 * num_of_children) + (24000 * smoker) - 12500)
-print("This person's insurance cost is", str(insurance_cost), "dollars")
+# Initial variables for Omar
+age = 35
+sex = 1 
+bmi = 22.2
+num_of_children = 0
+smoker = 1  
+name = "Omar"
+# Estimate Omar's insurance cost 
+omar_insurance_cost = calculate_insurance_cost(age, sex, bmi, num_of_children, smoker, name)
 
-# Age Factor
-age += 4
-
-new_insurance_cost = ((250 * age) - (128 * sex) + (370 * bmi) + (425 * num_of_children) + (24000 * smoker) - 12500)
-
-change_in_insurance_cost = new_insurance_cost - insurance_cost
-
-print("The change in cost of insurance after increasing the age by 4 years is", str(change_in_insurance_cost), "dollars")
-
-# BMI Factor
-age = 28
-bmi += 3.1
-
-new_insurance_cost = ((250 * age) - (128 * sex) + (370 * bmi) + (425 * num_of_children) + (24000 * smoker) - 12500)
-
-change_in_insurance_cost = new_insurance_cost - insurance_cost
-
-print("The change in estimated insurance cost after increasing the BMI by 3.1 years is", str(change_in_insurance_cost), "dollars")
-
-# Male vs. Female Factor
-bmi = 26.2
-sex = 1
-
-new_insurance_cost = ((250 * age) - (128 * sex) + (370 * bmi) + (425 * num_of_children) + (24000 * smoker) - 12500)
-
-change_in_insurance_cost = new_insurance_cost - insurance_cost
-
-print("The change in estimated cost for being male instead of female is", str(change_in_insurance_cost), "dollars")
+age = 34
+sex = 1 
+bmi = 16.2
+num_of_children = 0
+smoker = 1  
+name = "Spencer"
+# Estimate my insurance cost 
+my_insurance_cost = calculate_insurance_cost(age, sex, bmi, num_of_children, smoker, name)
